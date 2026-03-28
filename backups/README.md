@@ -2,4 +2,4 @@
 Scripts focused on data integrity and disaster recovery.
 
 ### Scripts:
-* *None yet - Currently in developement.*
+* **AutoBackup.sh**: Asks for a filename and creates a timestamped copy with a '.bak' extension
