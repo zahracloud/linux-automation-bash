@@ -1,24 +1,18 @@
 #!/bin/bash
-#DESCRIPTION:
-#This script ask a user for a filename
-#and then creates a copy of that file adding a timestamp and  .bak as extensions
+#TITLE: Autobackup.sh
+#DESCRIPTION: Creates a timestamped backup of a specific file.
+#USAGE: /.AutoBackup.sh <filename>
 
-# --- HEADER ---
-echo " --- Auto-Backup ---"
+TARGET="$1"
 
-# --- INPUT ---
-read -p "Enter the filename to backup:" FILENAME
-
-# --- LOGIC ---
-# 1. Check if the file actually exists
-if [ -f "$FILENAME" ]; then
-	TIMESTAMP=$(date +%Y-%m-%d_%H-%M)
-	BACKUP_NAME="${FILENAME}.${TIMESTAMP}.bak"
-	cp -p "$FILENAME" "$BACKUP_NAME"
-
-# 3. Report 
-        echo "SUCCESS: Backup of $FILENAME created as $BACKUP_NAME"
-else
-	echo "ERROR: File '$FILENAME' not found"
+if [ -z "$TARGET" ]; then
+	echo "ERROR: Please provide a filename to back up."
+	echo "Usage: $0 file.name.txt"
 	exit 1
 fi
+
+TIMESTAMP=$(date +%Y-%m-%d)
+BACKUP_NAME="${TARGET}_${TIMESTAMP}.bak"
+
+cp "$TARGET" "$BACKUP_NAME"
+echo "SUCCESS: Backup created as $BACKUP_NAME"
