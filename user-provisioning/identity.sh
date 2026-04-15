@@ -1,24 +1,34 @@
 #!/bin/bash
-#DESCRIPTION:
-#This script generates a standardized "Identity" for a project by creating a versioned 
-#directory. It acts as a template for organizing project files.
 
-# --- HEADER ---
-echo "---  PROJECT IDENTITY CREATOR ---" 
+# TITLE: identity.sh
+# DESCRIPTION: Automates standardized project directory creation using versioning.
+# USAGE: ./identity.sh <project_name> <version_number>
 
-# --- INPUT ---
-echo "Enter project name:"
-read PROJECT
+PROJECT="$1"
+VERSION="$2"
 
-echo "Enter version number:"
-read VERSION
+if [ -z "$PROJECT" ]; then
+	echo "ERROR: Missing project name"
+	echo "Usage: $0 <project_name> <version_number>"
+	exit 1
+fi
 
-# --- LOGIC ---
-#Creating the identity folder
-mkdir -p "${PROJECT}_v${VERSION}"
+if [ -z "$VERSION" ]; then
+	echo "ERROR: Missing version number"
+	echo "Usage: $0 $PROJECT  <version_number>"
+fi
 
-# --- REPORT ---
-echo "STATUS: Identity created"
-echo "LOCATION: ./${PROJECT}_v${VERSION}"
-echo "TIMESTAMP: $(date)"
+DIR_NAME="${PROJECT}_v${VERSION}"
+
+if [ -d "$DIR_NAME"]; then
+	echo "NOTICE: The folder '$DIR_NAME' already exists. No action taken."
+	exit 0
+else 
+	mkdir -p "$DIR_NAME"
+	
+	echo "--- PROJECT IDENTITY CREATOR ---"
+	echo "STATUS: Identity Folder Created Successfully"
+	echo "LOCATION: ./${DIR_NAME}"
+	echo "TIMESTAMP: ${date}"
+fi
 
