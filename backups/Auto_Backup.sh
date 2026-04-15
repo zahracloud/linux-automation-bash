@@ -1,7 +1,8 @@
 #!/bin/bash
-#TITLE: Autobackup.sh
-#DESCRIPTION: Creates a timestamped backup of a specific file.
-#USAGE: /.AutoBackup.sh <filename>
+
+# TITLE: Autobackup.sh
+# DESCRIPTION: Creates a timestamped backup of a specific file.
+# USAGE: /.AutoBackup.sh <filename>
 
 TARGET="$1"
 
