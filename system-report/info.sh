@@ -1,17 +1,20 @@
 #!/bin/bash
-#DESCRIPTION:
-#This script generates a real-time diagnostic report of the system.
-#It displays the current user, hostname, uptime and memory status.
 
-# --- HEADER ---
-echo "--- SYSTEM REPORT FOR $USER ---"
+# TITLE: info.sh
+# DESCRIPTION: generates a real-time system diagnostic report.
+# USAGE: ./info.sh
 
-# --- LOGIC  ---
-echo "Hostname: $(hostname)"
-echo "Uptime: $(uptime -p)"
-echo "Memory Usage:"
+echo "--- SYSTEM REPORT FOR: ${USER}@$(HOSTNAME) ---"
+
+echo "SYSTEM IDENTITY: ${hostname}"
+echo "UPTIME:          ${uptime -p}"
+
+echo -e "\nMEMORY STATUS:"
 free -h
 
-# --- REPORT ----
-echo "STATUS: Report complete "
-echo "TIMESTAMP: $(date)"
+echo -e "\nDISK SPACE USAGE:"
+df -h /
+
+echo "STATUS:     Report complete"
+echo "TIMESTAMP:  $(date '+%Y-%m-%d %H:%M:%S')" 
+
