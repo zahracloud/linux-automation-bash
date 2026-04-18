@@ -1,5 +1,7 @@
-# User & Enviroment Provisioning
-Automation tools to manage user onboarding and directory structures safely and consistently.
+# User & Environment Provisioning
+Automation tools to manage user onboarding safely and consistently.
 
 ### Scripts:
-* **Identity.sh**: Collects user data and creates a dedicated workspace for them.
+- **identity.sh**: Provisions a user directory and project workspace.
+  - **Advanced Logic:** Uses **Idempotency** (checking if directories exist before creation) to prevent script crashes.
+  - **Automation:** Built with positional parameters (`$1`, `$2`) to allow for integratin into larger CI/CD pipelines.
