@@ -7,12 +7,13 @@ This repository serves as a collection of scripts, tools, and configurations I'v
 ## Goal
 My objective is to master the "Linux-First" mindset required for DevOps and Cloud Engineering, focusing on efficiency, security, and Infrastructure as Code (IaC) principles.
 
-## Project Structure
+### Project Structure
 
-Folder / Script,Description,Status
-system-report/,Advanced diagnostic reporting with ISO-8601 timestamps and human-readable metrics.,✅ Complete
-user-provisioning/,Idempotent environment setup using positional parameters and input validation.,✅ Complete
-backups/,Automated data retention using .bak extensions and dynamic naming.,✅ Complete
+| Folder / Script | Description | Status |
+| :--- | :--- | :--- |
+| **system-report/** | Advanced diagnostic reporting with ISO-8601 timestamps and human-readable metrics. | ✅ Complete |
+| **user-provisioning/** | Idempotent environment setup using positional parameters and input validation. | ✅ Complete |
+| **backups/** | Automated data retention using `.bak` extensions and dynamic naming. | ✅ Complete |
 
 ##  Key Skills Demonstrated
 * **Bash Scripting:** Using variables, loops, and conditional logic.
