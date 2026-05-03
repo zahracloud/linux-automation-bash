@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source ./utils.sh
 # TITLE: master.sh 
 # DESCRIPTION: This script performs pre-flight envoiremnet checks, fixes permissions,
 # and provides an interactive interface to run system report, backups and provisioning tools.
@@ -12,25 +12,25 @@ DIR3="user-provisioning"
 echo " --- SYSTEM CHECK ---"
 echo ""
 if [ -d "$DIR1" ]; then
-	echo "Success: Backups directory found."
+	print_success "Success: Backups directory found."
 else
-	echo "Error: Backups directory not found."
+	print_error  "Error: Backups directory not found."
 	exit 1
 fi
 
 
 if [ -d "$DIR2" ]; then
-	echo "Success: System Report directory found."
+	print_success "Success: System Report directory found."
 else
-	echo "Error: System Report directory not found."
+	print_error  "Error: System Report directory not found."
 	exit 1
 fi
 
 
 if [ -d "$DIR3" ]; then
-	echo "Success: User Provisioning directory found."
+	print_success "Success: User Provisioning directory found."
 else
-	echo "Error: User Provisioning directory not founf."
+	print_error  "Error: User Provisioning directory not founf."
 	exit 1
 fi
 

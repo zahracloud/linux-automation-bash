@@ -4,10 +4,10 @@
 # DESCRIPTION: generates a real-time system diagnostic report.
 # USAGE: ./info.sh
 
-echo "--- SYSTEM REPORT FOR: ${USER}@$(HOSTNAME) ---"
+echo "--- SYSTEM REPORT FOR: ${USER}@$(hostname) ---"
 
-echo "SYSTEM IDENTITY: ${hostname}"
-echo "UPTIME:          ${uptime -p}"
+echo "SYSTEM IDENTITY: $(hostname)"
+echo "UPTIME:          $(uptime -p)"
 
 echo -e "\nMEMORY STATUS:"
 free -h
