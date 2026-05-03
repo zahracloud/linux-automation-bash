@@ -29,6 +29,6 @@ else
 	echo "--- PROJECT IDENTITY CREATOR ---"
 	echo "STATUS: Identity Folder Created Successfully"
 	echo "LOCATION: ./${DIR_NAME}"
-	echo "TIMESTAMP: ${date}"
+	echo "TIMESTAMP: $(date '+%Y-%m-%d %H:%M:%S')"
 fi
 
